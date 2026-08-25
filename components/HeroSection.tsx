@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, Terminal, Copy, Check, Search, Bot, Wand2, Sliders, Image, Code2, ArrowUpRight } from 'lucide-react';
+import { Sparkles, Terminal, Copy, Check, Search, Bot, Wand2, Sliders, Image, Code2, ArrowRight, ArrowUpRight, Star, Users } from 'lucide-react';
 
 const PROMPT_TEMPLATES = [
   {
@@ -59,12 +59,15 @@ export function HeroSection() {
 
   return (
     <section className="promptbase-hero">
+      <div className="promptbase-ambient-glow" />
+
       <div className="promptbase-hero-grid">
         {/* Left: Prompt Engineering Value Prop */}
         <div className="promptbase-hero-content">
           <div className="promptbase-badge">
             <Sparkles size={14} className="text-fuchsia-400" />
             <span>Curated Frontier System Prompts & Chain Kits</span>
+            <span className="promptbase-badge-pill">COPY-READY</span>
           </div>
 
           <h1 className="promptbase-title">
@@ -97,6 +100,35 @@ export function HeroSection() {
               Search Prompts
             </button>
           </form>
+
+          {/* Dual Action CTAs */}
+          <div className="promptbase-cta-row">
+            <Link href="/category/ai" className="promptbase-primary-btn">
+              Explore 6,200+ Prompts <ArrowRight size={15} />
+            </Link>
+            <Link href="/submit" className="promptbase-secondary-btn">
+              Submit Prompt Chain
+            </Link>
+          </div>
+
+          {/* Social Proof */}
+          <div className="promptbase-social-proof">
+            <div className="promptbase-avatar-stack">
+              <span className="pb-avatar av-1">✨</span>
+              <span className="pb-avatar av-2">🤖</span>
+              <span className="pb-avatar av-3">🧠</span>
+              <span className="pb-avatar av-4">⚡</span>
+            </div>
+            <div className="promptbase-proof-text">
+              <div className="promptbase-proof-stars">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={12} className="fill-fuchsia-400 text-fuchsia-400" />
+                ))}
+                <span className="promptbase-rating">4.9/5.0</span>
+              </div>
+              <span className="promptbase-subtext">Used by 68,000+ AI researchers and prompt engineers</span>
+            </div>
+          </div>
 
           {/* Prompt Category Pills */}
           <div className="promptbase-tags-row">
