@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { ExternalLink, MessageCircle, Mail } from 'lucide-react';
 
 export function Footer({ siteName = 'PromptBaseDaily' }: { siteName?: string }) {
@@ -20,29 +19,29 @@ export function Footer({ siteName = 'PromptBaseDaily' }: { siteName?: string }) 
             <div>
               <h4 className="pbd-footer-heading">Explore</h4>
               <ul>
-                <li><Link href="/">Today's Launches</Link></li>
-                <li><Link href="/trends">Trending</Link></li>
-                <li><Link href="/collections/this-week">Weekly Top</Link></li>
-                <li><Link href="/collections/this-month">Monthly Top</Link></li>
+                <li><a href="/">Today's Launches</a></li>
+                <li><a href="/trends">Trending</a></li>
+                <li><a href="/collections/this-week">Weekly Top</a></li>
+                <li><a href="/collections/this-month">Monthly Top</a></li>
               </ul>
             </div>
             <div>
               <h4 className="pbd-footer-heading">Categories</h4>
               <ul>
-                <li><Link href="/category/reasoning">Reasoning</Link></li>
-                <li><Link href="/category/coding">Coding</Link></li>
-                <li><Link href="/category/creative">Creative</Link></li>
-                <li><Link href="/category/business">Business</Link></li>
+                <li><a href="/category/reasoning">Reasoning</a></li>
+                <li><a href="/category/coding">Coding</a></li>
+                <li><a href="/category/creative">Creative</a></li>
+                <li><a href="/category/business">Business</a></li>
               </ul>
             </div>
             <div>
               <h4 className="pbd-footer-heading">Directory</h4>
               <ul>
-                <li><Link href="/submit">Submit Product</Link></li>
-                <li><Link href="/sponsor">Sponsor</Link></li>
-                <li><Link href="/about">About</Link></li>
-                <li><Link href="/privacy">Privacy</Link></li>
-                <li><Link href="/terms">Terms</Link></li>
+                <li><a href="/submit">Submit Product</a></li>
+                <li><a href="/sponsor">Sponsor</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+                <li><a href="/terms">Terms</a></li>
               </ul>
             </div>
           </div>

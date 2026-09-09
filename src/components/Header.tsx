@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Search, TrendingUp, PlusCircle, Menu, X } from 'lucide-react';
 
@@ -40,19 +39,19 @@ export function Header({ siteName = 'PromptBaseDaily' }: { siteName?: string }) 
   return (
     <header ref={headerRef} className={`pbd-nav ${scrolled ? 'pbd-nav-scrolled' : ''}`}>
       <div className="pbd-nav-inner">
-        <Link href="/" className="pbd-nav-brand">
+        <a href="/" className="pbd-nav-brand">
           <span className="pbd-nav-brand-text">{siteName}</span>
-        </Link>
+        </a>
         <form onSubmit={handleSearchSubmit} className="pbd-nav-search">
           <Search size={14} className="pbd-nav-search-icon" />
           <input type="text" placeholder="Search..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
         </form>
         <nav className="pbd-nav-links">
-          <Link href="/trends" className={`pbd-nav-link ${pathname === '/trends' ? 'active' : ''}`}>
+          <a href="/trends" className={`pbd-nav-link ${pathname === '/trends' ? 'active' : ''}`}>
             <TrendingUp size={13} /> Trends
-          </Link>
-          <Link href="/sponsor" className={`pbd-nav-link ${pathname === '/sponsor' ? 'active' : ''}`}>Sponsor</Link>
-          <Link href="/submit" className="pbd-nav-cta"><PlusCircle size={14} /> Submit</Link>
+          </a>
+          <a href="/sponsor" className={`pbd-nav-link ${pathname === '/sponsor' ? 'active' : ''}`}>Sponsor</a>
+          <a href="/submit" className="pbd-nav-cta"><PlusCircle size={14} /> Submit</a>
         </nav>
         <button className="pbd-nav-mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -60,10 +59,10 @@ export function Header({ siteName = 'PromptBaseDaily' }: { siteName?: string }) 
       </div>
       {mobileOpen && (
         <div className="pbd-nav-mobile-menu">
-          <Link href="/trends" onClick={() => setMobileOpen(false)}>Trends</Link>
-          <Link href="/sponsor" onClick={() => setMobileOpen(false)}>Sponsor</Link>
-          <Link href="/submit" onClick={() => setMobileOpen(false)}>Submit</Link>
-          <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
+          <a href="/trends" onClick={() => setMobileOpen(false)}>Trends</a>
+          <a href="/sponsor" onClick={() => setMobileOpen(false)}>Sponsor</a>
+          <a href="/submit" onClick={() => setMobileOpen(false)}>Submit</a>
+          <a href="/about" onClick={() => setMobileOpen(false)}>About</a>
         </div>
       )}
     </header>

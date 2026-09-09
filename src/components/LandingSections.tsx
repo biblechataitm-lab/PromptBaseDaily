@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { Sparkles, Wand2, Bot, Sliders, Image, Code2, ArrowRight, CheckCircle2, Copy, Zap } from 'lucide-react';
 
 export function LandingSections() {
@@ -150,12 +149,12 @@ export function LandingSections() {
             Publish your system prompts, Midjourney workflows, and evaluation datasets to an engaged audience of researchers.
           </p>
           <div className="launch-cta-buttons">
-            <Link href="/submit" className="launch-cta-primary">
+            <a href="/submit" className="launch-cta-primary">
               Submit Prompt Chain <ArrowRight size={15} />
-            </Link>
-            <Link href="/category/ai" className="launch-cta-secondary">
+            </a>
+            <a href="/category/ai" className="launch-cta-secondary">
               Browse Prompts
-            </Link>
+            </a>
           </div>
         </div>
       </section>
