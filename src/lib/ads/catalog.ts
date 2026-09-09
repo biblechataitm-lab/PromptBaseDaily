@@ -3,30 +3,133 @@ import { request, mockMode } from './client';
 
 const MOCK_PRODUCTS: Product[] = [
   {
-    "id": "pbd-1",
-    "title": "CognitiveReason Promptbook",
-    "tagline": "Recursive chain-of-thought prompt templates for frontier reasoning models",
-    "description": "Battle-tested system instructions that double mathematical and code benchmark accuracy across Claude and GPT-4o.",
-    "logo": "https://placehold.co/96x96/0f0c1e/d946ef?text=CR",
-    "link": "https://example.com/cognitivereason",
-    "category": "Reasoning & Coding",
+    "id": "pb-1",
+    "title": "System Prompt Studio",
+    "tagline": "Curated library of battle-tested system prompts optimized for Claude 3.7 and reasoning models",
+    "link": "https://github.com",
+    "category": "AI & ML",
+    "upvotes": 495,
     "tags": [
       "prompts",
-      "reasoning",
-      "claude"
+      "system-prompts",
+      "ai"
     ],
     "techStack": [
       "Markdown",
-      "Python",
-      "OpenAI"
+      "XML",
+      "Claude API"
     ],
-    "coverImages": [],
-    "upvotes": 614,
-    "launchedAt": "2026-08-19T05:12:33.188Z",
     "maker": {
-      "name": "Aria Thorne",
-      "username": "athorne",
-      "avatar": "https://placehold.co/64x64/191530/d946ef?text=A"
+      "name": "Logan Kilpatrick",
+      "avatar": "https://placehold.co/64x64/d946ef/ffffff?text=SP"
+    }
+  },
+  {
+    "id": "pb-2",
+    "title": "Promptfoo",
+    "tagline": "Fast CLI tool to evaluate and test LLM outputs against security red-teaming benchmarks",
+    "link": "https://promptfoo.dev",
+    "category": "Developer Tools",
+    "upvotes": 460,
+    "tags": [
+      "evaluation",
+      "red-team",
+      "testing"
+    ],
+    "techStack": [
+      "TypeScript",
+      "Node.js",
+      "LLMs"
+    ],
+    "maker": {
+      "name": "Ian Webster",
+      "avatar": "https://placehold.co/64x64/8b5cf6/ffffff?text=PF"
+    }
+  },
+  {
+    "id": "pb-3",
+    "title": "Langfuse",
+    "tagline": "Open-source LLM engineering platform to trace model calls, monitor latency, and debug prompt regressions",
+    "link": "https://langfuse.com",
+    "category": "Search & Data",
+    "upvotes": 430,
+    "tags": [
+      "observability",
+      "tracing",
+      "llm"
+    ],
+    "techStack": [
+      "TypeScript",
+      "ClickHouse",
+      "Next.js"
+    ],
+    "maker": {
+      "name": "Marc Klingen",
+      "avatar": "https://placehold.co/64x64/38bdf8/ffffff?text=LF"
+    }
+  },
+  {
+    "id": "pb-4",
+    "title": "Helicone",
+    "tagline": "LLM observability platform and proxy with automatic prompt caching and cost telemetry",
+    "link": "https://helicone.ai",
+    "category": "Developer Tools",
+    "upvotes": 380,
+    "tags": [
+      "caching",
+      "proxy",
+      "cost-control"
+    ],
+    "techStack": [
+      "Rust",
+      "Cloudflare Workers",
+      "React"
+    ],
+    "maker": {
+      "name": "Justin Torre",
+      "avatar": "https://placehold.co/64x64/f59e0b/ffffff?text=HC"
+    }
+  },
+  {
+    "id": "pb-5",
+    "title": "Few-Shot Synthesizer",
+    "tagline": "Automated synthesis tool that extracts edge-case examples from production logs into few-shot templates",
+    "link": "https://github.com",
+    "category": "AI & ML",
+    "upvotes": 350,
+    "tags": [
+      "few-shot",
+      "data-pipeline",
+      "ai"
+    ],
+    "techStack": [
+      "Python",
+      "Pandas"
+    ],
+    "maker": {
+      "name": "Elena V.",
+      "avatar": "https://placehold.co/64x64/10b981/ffffff?text=FS"
+    }
+  },
+  {
+    "id": "pb-6",
+    "title": "Jailbreak Guard",
+    "tagline": "Automated prompt injection regression harness for enterprise customer-facing LLM applications",
+    "link": "https://github.com",
+    "category": "Developer Tools",
+    "upvotes": 320,
+    "tags": [
+      "safety",
+      "jailbreak",
+      "defense"
+    ],
+    "techStack": [
+      "Python",
+      "PyTorch"
+    ],
+    "maker": {
+      "name": "Arthur B.",
+      "avatar": "https://placehold.co/64x64/ec4899/ffffff?text=JG"
     }
   }
 ];
