@@ -9,7 +9,7 @@ export function CTASection() {
       <div className="pbd-cta-glow" aria-hidden="true" />
       <div className="pbd-cta-content">
         <h2 className="pbd-cta-title">Share Your Best Prompts</h2>
-        <p className="pbd-cta-subtitle">Join 20K+ prompt engineers. Share, discover, and monetize your AI prompts.</p>
+        <p className="pbd-cta-subtitle">Join forward-thinking prompt engineers. Share, discover, and build with AI prompts.</p>
         <div className="pbd-cta-buttons">
           <a href="/submit" className="pbd-cta-btn-primary">
             <Rocket size={15} /> Submit Product

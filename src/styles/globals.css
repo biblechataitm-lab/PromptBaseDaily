@@ -1669,233 +1669,597 @@ a {
 
 
 /* ==========================================================================
-   PROMPTBASEDAILY — Production Prompt Engineering Styles
+   PROMPTBASEDAILY — AI Prompt Recipe Matrix & Evaluation Lab Theme
    ========================================================================== */
 .theme-promptbase {
-  background-color: #0a0612;
+  background-color: #0c0716;
   color: #faf5ff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  min-height: 100vh;
 }
+
+/* Navbar */
 .prompt-navbar {
-  position: fixed;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 48px);
-  max-width: 1200px;
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  background: rgba(22, 14, 38, 0.9);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(217, 70, 239, 0.25);
-  border-radius: 9999px;
-  padding: 10px 24px;
+  background: rgba(12, 7, 22, 0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(217, 70, 239, 0.2);
+  height: 68px;
 }
 .prompt-nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
+}
+.prompt-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 .prompt-brand {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 800;
-  font-size: 18px;
-  color: #faf5ff;
   text-decoration: none;
 }
 .prompt-star-logo {
-  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #d946ef 0%, #9333ea 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+  border-radius: 8px;
+  box-shadow: 0 0 14px rgba(217, 70, 239, 0.35);
+}
+.prompt-brand-text {
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  color: #ffffff;
+}
+.prompt-dot {
   color: #d946ef;
 }
+.prompt-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(217, 70, 239, 0.1);
+  border: 1px solid rgba(217, 70, 239, 0.3);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #f0abfc;
+  font-family: "Fira Code", monospace;
+  letter-spacing: 0.6px;
+}
+@media (max-width: 900px) {
+  .prompt-status-tag {
+    display: none;
+  }
+}
+.prompt-dot-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d946ef;
+  box-shadow: 0 0 8px #d946ef;
+  animation: promptPulse 2s infinite;
+}
+@keyframes promptPulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
 .prompt-nav-links {
   display: flex;
-  align-items: center;
   gap: 24px;
-  font-size: 14px;
 }
-.prompt-nav-links a {
+@media (max-width: 800px) {
+  .prompt-nav-links {
+    display: none;
+  }
+}
+.prompt-nav-link {
   color: #c084fc;
+  font-size: 13.5px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
   transition: color 0.15s;
 }
-.prompt-nav-links a:hover {
+.prompt-nav-link:hover, .prompt-nav-link.active {
   color: #f0abfc;
+}
+
+.prompt-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.prompt-eval-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+@media (max-width: 640px) {
+  .prompt-eval-badge {
+    display: none;
+  }
+}
+.eval-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #a855f7;
+  font-family: "Fira Code", monospace;
+  letter-spacing: 0.5px;
+}
+.eval-val {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #34d399;
+  font-family: "Fira Code", monospace;
 }
 .prompt-cta-btn {
   background: linear-gradient(135deg, #c026d3, #9333ea);
   color: #ffffff;
   padding: 8px 18px;
-  border-radius: 9999px;
-  font-size: 13px;
+  border-radius: 8px;
+  font-size: 12.5px;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.2s;
-  box-shadow: 0 4px 14px rgba(192, 38, 211, 0.3);
+  box-shadow: 0 0 16px rgba(192, 38, 211, 0.35);
 }
 .prompt-cta-btn:hover {
   background: linear-gradient(135deg, #d946ef, #a855f7);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(217, 70, 239, 0.4);
+  box-shadow: 0 0 22px rgba(217, 70, 239, 0.5);
 }
 
+/* Hero Section */
 .prompt-hero {
-  padding: 140px 0 70px;
+  padding: 100px 0 60px;
+  position: relative;
+  background: radial-gradient(circle at 50% -20%, rgba(217, 70, 239, 0.16) 0%, transparent 65%);
   border-bottom: 1px solid rgba(217, 70, 239, 0.15);
 }
 .prompt-hero-container {
-  max-width: 900px;
+  max-width: 1050px;
   margin: 0 auto;
   text-align: center;
+}
+
+.prompt-sparkle-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
 }
 .prompt-sparkle-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
+  padding: 5px 16px;
   border-radius: 9999px;
   background: rgba(217, 70, 239, 0.12);
-  border: 1px solid rgba(217, 70, 239, 0.3);
+  border: 1px solid rgba(217, 70, 239, 0.35);
   font-size: 11px;
   font-weight: 700;
   color: #f0abfc;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
+.prompt-sparkle-star {
+  color: #d946ef;
+}
+.prompt-harness-badge {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #c084fc;
+  font-family: "Fira Code", monospace;
+}
+
 .prompt-title {
-  font-size: clamp(34px, 4.5vw, 58px);
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(34px, 4.8vw, 58px);
   font-weight: 800;
   letter-spacing: -1.2px;
-  line-height: 1.1;
-  margin-bottom: 18px;
+  line-height: 1.12;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto 18px;
 }
 .prompt-neon {
-  background: linear-gradient(135deg, #f0abfc, #d946ef, #a855f7);
+  background: linear-gradient(135deg, #f0abfc 0%, #d946ef 50%, #a855f7 100%);
   -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .prompt-desc {
-  font-size: 17px;
+  font-size: clamp(15px, 1.8vw, 17px);
   color: #c084fc;
   line-height: 1.6;
   margin: 0 auto 36px;
-  max-width: 680px;
+  max-width: 720px;
 }
 
+/* Interactive Prompt Recipe Playground */
 .prompt-playground-card {
-  background: #140d24;
+  background: #120a22;
   border: 1px solid rgba(217, 70, 239, 0.3);
   border-radius: 16px;
   padding: 24px;
   text-align: left;
-  box-shadow: 0 16px 40px rgba(147, 51, 234, 0.15);
+  box-shadow: 0 16px 40px -12px rgba(147, 51, 234, 0.22);
+  max-width: 860px;
+  margin: 0 auto 36px;
 }
+.prompt-recipe-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .prompt-recipe-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.recipe-tab {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #c084fc;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.recipe-tab:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.recipe-tab.active {
+  background: rgba(217, 70, 239, 0.18);
+  border-color: rgba(217, 70, 239, 0.45);
+  color: #f0abfc;
+}
+
 .playground-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
   font-size: 12px;
-  font-family: ui-monospace, monospace;
+  font-family: "Fira Code", monospace;
 }
-.p-model-chip {
+.playground-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.p-tag-badge {
   background: rgba(217, 70, 239, 0.15);
   color: #f0abfc;
   padding: 4px 10px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.p-model-chip {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e9d5ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.playground-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .p-temp-chip {
   color: #c084fc;
 }
+.p-score-chip {
+  color: #34d399;
+  font-weight: 700;
+}
+
 .playground-body {
-  background: #0a0612;
+  background: #080410;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  padding: 16px;
-  font-family: ui-monospace, monospace;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+.playground-code {
+  font-family: "Fira Code", monospace;
   font-size: 13px;
   line-height: 1.6;
   color: #e9d5ff;
-  margin-bottom: 16px;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
+
 .playground-actions {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-.copy-prompt-btn {
-  background: #9333ea;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.copy-prompt-btn:hover {
-  background: #a855f7;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 14px;
 }
 .p-token-count {
   font-size: 12px;
   color: #c084fc;
-  font-family: ui-monospace, monospace;
+  font-family: "Fira Code", monospace;
+}
+.copy-prompt-btn {
+  background: #9333ea;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.copy-prompt-btn:hover {
+  background: #a855f7;
+}
+.copy-prompt-btn.copied {
+  background: #10b981;
 }
 
-/* Prompt Features */
-.prompt-features {
-  padding: 80px 24px;
+/* Search Box */
+.prompt-search-wrap {
+  max-width: 640px;
+  margin: 0 auto;
 }
-.prompt-heading {
-  text-align: center;
-  margin-bottom: 48px;
+.prompt-search-bar {
+  display: flex;
+  align-items: center;
+  background: #120a22;
+  border: 1px solid rgba(217, 70, 239, 0.25);
+  border-radius: 12px;
+  padding: 6px 8px 6px 16px;
+  gap: 12px;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.4);
 }
-.prompt-neon-tag {
-  font-size: 11px;
-  font-weight: 700;
-  color: #d946ef;
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 8px;
+.prompt-search-bar:focus-within {
+  border-color: #d946ef;
+  box-shadow: 0 0 0 3px rgba(217, 70, 239, 0.2);
 }
-.prompt-heading h2 {
-  font-size: clamp(28px, 3.5vw, 42px);
-  color: #faf5ff;
+.prompt-search-icon {
+  color: #a855f7;
+  flex-shrink: 0;
 }
-.prompt-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-@media (max-width: 900px) {
-  .prompt-grid-3 { grid-template-columns: 1fr; }
-}
-.prompt-card {
-  background: #140d24;
-  border: 1px solid rgba(217, 70, 239, 0.15);
-  border-radius: 16px;
-  padding: 32px 24px;
-  transition: all 0.2s;
-}
-.prompt-card:hover {
-  border-color: rgba(217, 70, 239, 0.4);
-  transform: translateY(-3px);
-}
-.p-icon {
-  font-size: 28px;
-  margin-bottom: 16px;
-}
-.prompt-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #faf5ff;
-  margin-bottom: 10px;
-}
-.prompt-card p {
+.prompt-search-input {
+  background: transparent;
+  border: none;
+  color: #ffffff;
   font-size: 14px;
-  color: #c084fc;
-  line-height: 1.6;
+  outline: none;
+  flex: 1;
 }
+.prompt-search-input::placeholder {
+  color: #a855f7;
+}
+.prompt-search-btn {
+  background: #9333ea;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.prompt-search-btn:hover {
+  background: #a855f7;
+}
+
+
+
+/* Responsive Stats Grid Rules */
+@media (max-width: 1024px) {
+  [class*="-stats-grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 540px) {
+  [class*="-stats-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
+[class*="-stat-value"] {
+  font-size: clamp(20px, 2.4vw, 28px) !important;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ==========================================================================
+   UNIVERSAL MOBILE & TABLET RESPONSIVE AUDIT RULES
+   ========================================================================== */
+
+/* Prevent horizontal window blowouts */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  position: relative;
+}
+
+/* Mobile container padding */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Two-column layout collapses to single column on tablet/mobile */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 24px !important;
+  }
+}
+
+/* Product Cards mobile compactness */
+@media (max-width: 640px) {
+  .product-card {
+    padding: 14px !important;
+    gap: 12px !important;
+  }
+  .product-logo {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .product-title {
+    font-size: 16px !important;
+  }
+  .product-tagline {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* Stats Section: 4 cols on desktop, 2 cols on tablet, 1 col on mobile */
+@media (max-width: 1024px) {
+  .pbd-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .pbd-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+[class*="-stat-value"] {
+  font-size: clamp(20px, 2.4vw, 28px) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+
+[class*="-stat-card"] {
+  padding: 22px 14px !important;
+  min-height: 110px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+/* CTA Section mobile wrapping */
+@media (max-width: 640px) {
+  [class*="-cta"] {
+    padding: 60px 16px !important;
+  }
+  [class*="-cta-title"] {
+    font-size: clamp(24px, 6vw, 32px) !important;
+  }
+  [class*="-cta-buttons"] {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+  [class*="-cta-btn"] {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 16px !important;
+  }
+}
+
+/* Footer mobile layout */
+@media (max-width: 820px) {
+  [class*="-footer-top"] {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+@media (max-width: 560px) {
+  [class*="-footer-links-grid"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+@media (max-width: 380px) {
+  [class*="-footer-links-grid"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+      @media (max-width: 860px) {
+        .prompt-nav-links { display: none !important; }
+      }
+      @media (max-width: 640px) {
+        .prompt-eval-badge, .prompt-status-tag { display: none !important; }
+      }
+      .prompt-recipe-tabs {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 8px !important;
+        scrollbar-width: none !important;
+        white-space: nowrap !important;
+        padding-bottom: 6px !important;
+      }
+      .prompt-recipe-tabs::-webkit-scrollbar { display: none; }
+      .recipe-tab {
+        flex-shrink: 0 !important;
+      }
+      .playground-header {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+      .playground-actions {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+      }
+      @media (max-width: 520px) {
+        .prompt-search-bar {
+          flex-direction: column !important;
+          gap: 8px !important;
+        }
+        .prompt-search-input, .prompt-search-btn {
+          width: 100% !important;
+          height: 44px !important;
+        }
+      }
+    

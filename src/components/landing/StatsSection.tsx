@@ -3,10 +3,10 @@
 import React from 'react';
 
 const STATS = [
-  { value: '3,000+', label: 'Prompts' },
-  { value: '20K+', label: 'Prompt Engineers' },
-  { value: '50+', label: 'Daily Submissions' },
-  { value: '92%', label: 'Effectiveness Rate' },
+  { value: '100%', label: 'Direct Maker Submissions' },
+  { value: 'Realtime', label: 'Verified Catalog Releases' },
+  { value: 'Community', label: 'Upvote & Feedback Engine' },
+  { value: 'Zero Tracking', label: 'Privacy First Directory' },
 ];
 
 export function StatsSection() {
